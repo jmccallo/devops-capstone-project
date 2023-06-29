@@ -134,3 +134,17 @@ class TestAccountService(TestCase):
         self.assertEqual(resp.status_code, status.HTTP_200_OK)
         data = resp.get_json()
         self.assertEqual(data["name"], account.name)
+
+    def test_get_account_lists(self):
+        """List of all accounts"""
+        
+        self._create_accounts(5)
+        # send a self.client.get() request to the BASE_URL
+        # assert that the resp.status_code is status.HTTP_200_OK
+        # get the data from resp.get_json()
+        # assert that the len() of the data is 5 (the number of accounts created)
+
+        resp = self.client.get(BASE_URL)
+        self.assertEqual(resp.status_code, status.HTTP_200_OK)
+        data = resp.get_json()
+        self.assertEqual(len(data), 5)
