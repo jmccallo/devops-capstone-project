@@ -107,16 +107,6 @@ def get_accounts(account_id):
     # return the serialize() version of the account with a return code of status.HTTP_200_OK
     return account.serialize(), status.HTTP_200_OK
 
-
-def test_get_account_not_found(self):
-    """It should not read an account that is not found"""
-
-    # send a self.client.get() request to the BASE_URL with an invalid number (e.g.,0)
-    resp = self.client.get(f"{BASE_URL}/0")
-
-    # assert that the resp.status_code is status.HTTP_404_NOT_FOUND
-    self.assertEqual(resp.status_code, status.HTTP_404_NOT_FOUND)
-
 ######################################################################
 # UPDATE AN EXISTING ACCOUNT
 ######################################################################

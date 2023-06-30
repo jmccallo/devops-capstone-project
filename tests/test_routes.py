@@ -152,6 +152,16 @@ class TestAccountService(TestCase):
         # assert that the len() of the data is 5 (the number of accounts created)
         self.assertEqual(len(data), 5)
 
+
+    def test_get_account_not_found(self):
+        """It should not read an account that is not found"""
+
+        # send a self.client.get() request to the BASE_URL with an invalid number (e.g.,0)
+        resp = self.client.get(f"{BASE_URL}/0")
+
+        # assert that the resp.status_code is status.HTTP_404_NOT_FOUND
+        self.assertEqual(resp.status_code, status.HTTP_404_NOT_FOUND)
+
     def test_update_account(self):
         """It should Update an existing account"""
 
