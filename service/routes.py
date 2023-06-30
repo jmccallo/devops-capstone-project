@@ -34,6 +34,7 @@ def index():
         status.HTTP_200_OK,
     )
 
+
 ######################################################################
 # CREATE A NEW ACCOUNT
 ######################################################################
@@ -56,6 +57,7 @@ def create_accounts():
         jsonify(message), status.HTTP_201_CREATED, {"Location": location_url}
     )
 
+
 ######################################################################
 # LIST ALL ACCOUNTS
 ######################################################################
@@ -77,6 +79,7 @@ def list_accounts():
     # return the list with a return code of status.HTTP_200_OK
     return jsonify(account_list), status.HTTP_200_OK
 
+
 ######################################################################
 # READ AN ACCOUNT
 ######################################################################
@@ -96,6 +99,7 @@ def get_accounts(account_id):
         abort(status.HTTP_404_NOT_FOUND, f"Account with id [{account_id}] could not be found.")
     # return the serialize() version of the account with a return code of status.HTTP_200_OK
     return account.serialize(), status.HTTP_200_OK
+
 
 ######################################################################
 # UPDATE AN EXISTING ACCOUNT
@@ -121,6 +125,7 @@ def update_accounts(account_id):
     # return the serialize() version of the account with a return code of status.HTTP_200_OK
     return account.serialize(), status.HTTP_200_OK
 
+
 ######################################################################
 # DELETE AN ACCOUNT
 ######################################################################
@@ -140,6 +145,7 @@ def delete_accounts(account_id):
         account.delete()
     # return and empty body ("") with a return code of status.HTTP_204_NO_CONTENT
     return "", status.HTTP_204_NO_CONTENT
+
 
 ######################################################################
 #  U T I L I T Y   F U N C T I O N S
