@@ -136,7 +136,7 @@ class TestAccountService(TestCase):
         self.assertEqual(data["name"], account.name)
 
     def test_get_account_lists(self):
-        """List of all accounts"""       
+        """List of all accounts"""     
         self._create_accounts(5)
         # send a self.client.get() request to the BASE_URL
         resp = self.client.get(BASE_URL)
@@ -186,7 +186,7 @@ class TestAccountService(TestCase):
         self.assertEqual(resp.status_code, status.HTTP_204_NO_CONTENT)
 
     def test_method_not_allowed(self):
-        """It should not allow an illegal method call"""       
+        """It should not allow an illegal method call"""  
         # call self.client.delete() on the BASE_URL
         resp = self.client.delete(BASE_URL)
         # assert that the resp.status_code is status.HTTP_405_METHOD_NOT_ALLOWED
