@@ -57,7 +57,7 @@ metadata:
 spec:
   description: This task will run nosetests on the provided input.
   workspaces: 
-       - name: source
+    - name: source
   params:
     - name: args
       description: Arguments to pass to nose
